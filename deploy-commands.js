@@ -9,6 +9,13 @@ const commands = [
     new SlashCommandBuilder().setName('ping').setDescription('Replies with pong!'),
     new SlashCommandBuilder().setName('server').setDescription('Replies with server info!'),
     new SlashCommandBuilder().setName('user').setDescription('Replies with user info!'),
+    new SlashCommandBuilder().setName('qrcode').setDescription('Replies with a QR code of the users message!')
+    .addStringOption(option => 
+        option.setName('data')
+        .setDescription('The data that will be made into a qr code.')
+        .setRequired(true)),
+    new SlashCommandBuilder().setName('urban').setDescription('Replies with a definition of the users message!'),
+   
 ]
     .map(command => command.toJSON());
 
