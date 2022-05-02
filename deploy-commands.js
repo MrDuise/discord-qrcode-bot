@@ -14,7 +14,7 @@ const commands = [
         option.setName('data')
         .setDescription('The data that will be made into a qr code.')
         .setRequired(true)),
-    new SlashCommandBuilder().setName('urban').setDescription('Replies with a definition of the users message!'),
+    
    
 ]
     .map(command => command.toJSON());

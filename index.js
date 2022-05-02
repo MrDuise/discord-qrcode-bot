@@ -28,20 +28,7 @@ client.on('interactionCreate', async interaction => {
         const query = new URLSearchParams({ data });
         const qrcode = `https://api.qrserver.com/v1/create-qr-code/?${query}`; //fetch the qrcode
         await interaction.editReply(qrcode); //send the qrcode
-    } else if (commandName === 'urban') {
-		await interaction.deferReply();
-		const term = interaction.options.getString('term');
-		const query = new URLSearchParams({ term });
-
-		const { list } = await fetch(`https://api.urbandictionary.com/v0/define?${query}`)
-			.then(response => response.json());
-
-            if (!list.length) {
-                return interaction.editReply(`No results found for **${term}**.`);
-            }
-        
-            interaction.editReply(`**${term}**: ${list[0].definition}`);
-	}
+    } 
     
 });
 
